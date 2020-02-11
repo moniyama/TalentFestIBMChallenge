@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "onTrack",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "cordova": {}
+}
