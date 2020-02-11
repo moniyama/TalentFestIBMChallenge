@@ -4,6 +4,7 @@
 
 .marginHome{
     margin: 20px;
+    font-size: 20px;
 }
 
 .options{
@@ -25,4 +26,8 @@
 
 .header{
     background-color:#AE2670;
+}
+
+.list{
+    font-size: 20px;
 }

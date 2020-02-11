@@ -98,8 +98,10 @@ const Rating: React.FC = () => {
               }}
             />
             <IonList>
-              <IonRadioGroup>
-                <IonListHeader>Plano de Carreira</IonListHeader>
+              <IonRadioGroup  className="list" >
+                <IonListHeader  className="list" >
+                  Plano de Carreira
+              </IonListHeader>
 
                 <div className="options">
                   <IonItem>
@@ -150,8 +152,10 @@ const Rating: React.FC = () => {
                 </div>
               </IonRadioGroup>
             </IonList>
-            <IonRadioGroup>
-              <IonListHeader>Maternidade</IonListHeader>
+            <IonRadioGroup  className="list" >
+              <IonListHeader  className="list" >
+                Maternidade
+              </IonListHeader>
 
               <div className="options">
                 <IonItem>
@@ -201,8 +205,10 @@ const Rating: React.FC = () => {
                 </IonItem>
               </div>
             </IonRadioGroup>
-            <IonRadioGroup>
-              <IonListHeader>Flexibilidade</IonListHeader>
+            <IonRadioGroup  className="list" >
+              <IonListHeader  className="list" >
+                Flexibilidade
+              </IonListHeader>
 
               <div className="options">
                 <IonItem>
@@ -252,8 +258,10 @@ const Rating: React.FC = () => {
                 </IonItem>
               </div>
             </IonRadioGroup>
-            <IonRadioGroup>
-              <IonListHeader>Ambiente Inclusivo</IonListHeader>
+            <IonRadioGroup  className="list" >
+              <IonListHeader  className="list" >
+                Ambiente Inclusivo
+              </IonListHeader>
 
               <div className="options">
                 <IonItem>
@@ -303,8 +311,10 @@ const Rating: React.FC = () => {
                 </IonItem>
               </div>
             </IonRadioGroup>
-            <IonRadioGroup>
-              <IonListHeader>Representatividade</IonListHeader>
+            <IonRadioGroup  className="list" >
+              <IonListHeader  className="list" >
+                Representatividade
+              </IonListHeader>
 
               <div className="options">
                 <IonItem>
@@ -354,8 +364,8 @@ const Rating: React.FC = () => {
                 </IonItem>
               </div>
             </IonRadioGroup>
-            <IonItem>
-              <IonLabel>Você indicaria esta empresa?</IonLabel>
+            <IonItem  className="list" >
+              <IonLabel >Você indicaria esta empresa?</IonLabel>
               <IonItem>
                 <IonToggle
                   color="success"
