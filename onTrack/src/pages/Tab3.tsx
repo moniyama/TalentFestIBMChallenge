@@ -1,17 +1,49 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonListHeader, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonList, IonItem, IonSelect, IonSelectOption } from '@ionic/react';
 
-const Tab3Page: React.FC = () => {
+const Tab3: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab Three</IonTitle>
+          <IonTitle>Woman OnTrack</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent></IonContent>
+      <IonListHeader>Avaliações</IonListHeader>
+      <IonList>
+      <IonItem>
+        <IonSelect placeholder="Recomendação">
+          <IonSelectOption value="f">Alta</IonSelectOption>
+          <IonSelectOption value="m">Baixa</IonSelectOption>
+        </IonSelect>
+      </IonItem>
+      </IonList>
+      <IonContent>
+      <IonCard>
+      <IonCardHeader>
+        <IonCardTitle>Tech Inn</IonCardTitle>
+        <IonCardSubtitle>Empresa de Tecnologia</IonCardSubtitle>
+      </IonCardHeader>
+      <IonCardContent>
+        <p>Maternidade</p>
+        <p>Carreira</p>
+        <p>Ambiente Inclusivo</p>
+      </IonCardContent>
+    </IonCard>
+    <IonCard>
+      <IonCardHeader>
+        <IonCardTitle>Tech X</IonCardTitle>
+        <IonCardSubtitle>Empresa de Tecnologia</IonCardSubtitle>
+      </IonCardHeader>
+      <IonCardContent>
+        <p>Maternidade</p>
+        <p>Carreira</p>
+        <p>Ambiente Inclusivo</p>
+      </IonCardContent>
+    </IonCard>
+      </IonContent>
     </IonPage>
   );
 };
 
-export default Tab3Page;
+export default Tab3;
