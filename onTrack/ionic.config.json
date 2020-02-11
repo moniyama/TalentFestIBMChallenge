@@ -1,0 +1,7 @@
+{
+  "name": "onTrack",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
