@@ -2,6 +2,7 @@ import React from 'react';
 import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, IonIcon, IonRadioGroup, IonRadio, IonInput, IonListHeader, IonTextarea, IonFabButton, IonButton } from '@ionic/react';
 import './Rating.css';
 import { happy, sad, closeCircle } from 'ionicons/icons';
+import firestore from '../database/firebaseConfig'
 
 
 // const createEvaluation = () => {
@@ -11,7 +12,7 @@ import { happy, sad, closeCircle } from 'ionicons/icons';
 //   const inclusive = document.querySelector('input[name=features]:checked').value;
 //   const representativeness = document.querySelector('input[name=genre]:checked').value;
   
-//   firebase.firestore().collection('evaluations').add({
+  //  firebase.firestore().collection('evaluations').add({
 //     careerPlan: careerPlan,
 //     maternity: maternity,
 //     flexibility: flexibility,
