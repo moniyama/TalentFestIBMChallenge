@@ -1,3 +1,7 @@
+:root{
+    --ion-background-color: #f4fcf8;
+}
+
 .marginHome{
     margin: 20px;
 }
@@ -17,4 +21,8 @@
     font-size: 25px;
     font-weight: bold;
     text-align: center;
+}
+
+.header{
+    background-color:#AE2670;
 }

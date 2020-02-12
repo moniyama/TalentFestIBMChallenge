@@ -62,9 +62,9 @@ const Rating: React.FC = () => {
   
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader className="header">
         <div className="logo">
-        <img src="/assets/LogoWoman.png"/>
+        <img src="/assets/logo.jpeg"/>
         </div>
       </IonHeader>
         <IonListHeader>
