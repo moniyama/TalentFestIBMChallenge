@@ -32,12 +32,12 @@ const Tab3: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Woman OnTrack</IonTitle>
-        </IonToolbar>
+      <IonHeader className="header">
+        <div className="logo">
+        <img src="/assets/logo.jpeg"/>
+        </div>
       </IonHeader>
-      <IonListHeader>Avaliações</IonListHeader>
+      <IonListHeader className="title">Avaliações</IonListHeader>
       <IonSelect>
         <IonItem>
           <IonSelect placeholder="Recomendação">
