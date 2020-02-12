@@ -6,35 +6,29 @@ import {
   IonTitle,
   IonToolbar,
   IonListHeader,
-  IonCard,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonCardContent,
-  IonList,
   IonItem,
   IonSelect,
   IonSelectOption
 } from "@ionic/react";
 import firebase from "../database/firebaseConfig";
+import Card from '../components/card'
 
 const Tab3: React.FC = () => {
-  const [companiesList, setCompaniesList] = useState([] as any);
+  const [evaluations, setEvaluations] = useState([] as any);
 
   useEffect(() => {
     firebase
       .firestore()
       .collection("evaluation")
       .onSnapshot(querySnapshot => {
-        const companies = querySnapshot.docs.map(doc => doc.data().company)
-        let listUnique = companies.filter((item, index) => companies.indexOf(item) === index)
-        setCompaniesList(listUnique);
-      })
+        const evaluationsData = querySnapshot.docs.map(doc => doc.data());
+        setEvaluations(evaluationsData);
+      });
   }, []);
 
   useEffect(() => {
-    console.log("companiesList", companiesList);
-  }, [companiesList]);
+    console.log("evaluations", evaluations);
+  }, [evaluations]);
 
   return (
     <IonPage>
@@ -44,37 +38,16 @@ const Tab3: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonListHeader>Avaliações</IonListHeader>
-      <IonList>
+      <IonSelect>
         <IonItem>
           <IonSelect placeholder="Recomendação">
             <IonSelectOption value="f">Alta</IonSelectOption>
             <IonSelectOption value="m">Baixa</IonSelectOption>
           </IonSelect>
         </IonItem>
-      </IonList>
+      </IonSelect>
       <IonContent>
-        <IonCard>
-          <IonCardHeader>
-            <IonCardTitle>Tech Inn</IonCardTitle>
-            <IonCardSubtitle>Empresa de Tecnologia</IonCardSubtitle>
-          </IonCardHeader>
-          <IonCardContent>
-            <p>Maternidade</p>
-            <p>Carreira</p>
-            <p>Ambiente Inclusivo</p>
-          </IonCardContent>
-        </IonCard>
-        <IonCard>
-          <IonCardHeader>
-            <IonCardTitle>Tech X</IonCardTitle>
-            <IonCardSubtitle>Empresa de Tecnologia</IonCardSubtitle>
-          </IonCardHeader>
-          <IonCardContent>
-            <p>Maternidade</p>
-            <p>Carreira</p>
-            <p>Ambiente Inclusivo</p>
-          </IonCardContent>
-        </IonCard>
+      {evaluations.map((evaluation: any, index:any) => <Card key={index} name={evaluation.company} recomendation={evaluation.recomendation}/>)}
       </IonContent>
     </IonPage>
   );

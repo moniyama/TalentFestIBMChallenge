@@ -1,65 +1,56 @@
-import React, { useState } from 'react';
-import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, IonIcon, IonRadioGroup, IonRadio, IonInput, IonListHeader, IonTextarea, IonFabButton, IonButton } from '@ionic/react';
-import './Rating.css';
-import { happy, sad, closeCircle } from 'ionicons/icons';
-import firebase from '../database/firebaseConfig';
-
-
-// const createEvaluation = () => {
-//   const careerPlan = currentTarget
-//   const maternity = document.querySelector('input[name=food]:checked').value;
-//   const flexibility = document.querySelector('input[name=drinks]:checked').value;
-//   const inclusive = document.querySelector('input[name=features]:checked').value;
-//   const representativeness = document.querySelector('input[name=genre]:checked').value;
-  
-  //  firebase.firestore().collection('evaluations').add({
-//     careerPlan: careerPlan,
-//     maternity: maternity,
-//     flexibility: flexibility,
-//     inclusive: inclusive,
-//     representativeness: representativeness,
-//     //userId: firebase.auth().currentUser.uid,
-//     addedAt: (new Date()).toLocaleString('pt-BR'),
-//   })
-//     .then(() => {
-//       window.location = '#home';
-//     });
-// }
-  
+import React, { useState } from "react";
+import {
+  IonContent,
+  IonHeader,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonIcon,
+  IonRadioGroup,
+  IonRadio,
+  IonInput,
+  IonListHeader,
+  IonTextarea,
+  IonFabButton,
+  IonButton
+} from "@ionic/react";
+import "./Rating.css";
+import { happy, sad, closeCircle } from "ionicons/icons";
+import firebase from "../database/firebaseConfig";
 
 const Rating: React.FC = () => {
-
   const [evaluation, setEvaluation] = useState([]);
-  const [company, setCompany] = useState('');
-  const [sector, setSector] = useState('');
+  const [company, setCompany] = useState("");
+  const [sector, setSector] = useState("");
 
   const sendRequest = () => {
-
     if (evaluation.length && sector && company) {
-      firebase.firestore().collection('evaluation').add({
-        evaluation,
-        sector,
-        company,
-        timeSend: new Date().getTime(),
-        status: 'evaluation',
-      })
-        .then(() => {
+      firebase
+        .firestore()
+        .collection("evaluation")
+        .add({
+          evaluation,
+          sector,
+          company,
+          timeSend: new Date().getTime(),
+          status: "evaluation"
         })
-      setEvaluation([])
-      setCompany('')
-      setSector('')
+        .then(() => {});
+      setEvaluation([]);
+      setCompany("");
+      setSector("");
+    } else if (!evaluation.length) {
+      alert("Selecione a avaliação");
+    } else if (!company) {
+      alert("Insira o nome da empresa");
+    } else if (!sector) {
+      alert("Insira o nome do setor");
     }
-    else if (!evaluation.length) {
-      alert('Selecione a avaliação')
-    }
-    else if (!company) {
-      alert('Insira o nome da empresa')
-    }
-    else if (!sector) {
-      alert('Insira o nome do setor')
-    }
-  }
-  
+  };
+
   return (
     <IonPage>
       <IonHeader>
@@ -73,21 +64,15 @@ const Rating: React.FC = () => {
       <IonContent>
         <div className="marginHome">
           <IonList>
-
             <IonInput placeholder=" Empresa"></IonInput>
             <IonInput placeholder=" Setor"></IonInput>
-
             <IonRadioGroup>
-              <IonListHeader>
-                Plano de Carreira
-            </IonListHeader>
-
+              <IonListHeader>Plano de Carreira</IonListHeader>
               <div className="options">
                 <IonItem>
                   <IonIcon icon={sad} />
-                  <IonRadio  value="1" />
+                  <IonRadio value="1" />
                 </IonItem>
-
                 <IonItem>
                   <IonLabel>Neutro</IonLabel>
                   <IonRadio value="2" />
@@ -105,9 +90,7 @@ const Rating: React.FC = () => {
               </div>
             </IonRadioGroup>
             <IonRadioGroup>
-              <IonListHeader>
-                Maternidade
-            </IonListHeader>
+              <IonListHeader>Maternidade</IonListHeader>
 
               <div className="options">
                 <IonItem>
@@ -132,9 +115,7 @@ const Rating: React.FC = () => {
               </div>
             </IonRadioGroup>
             <IonRadioGroup>
-              <IonListHeader>
-                Flexibilidade
-            </IonListHeader>
+              <IonListHeader>Flexibilidade</IonListHeader>
 
               <div className="options">
                 <IonItem>
@@ -159,9 +140,7 @@ const Rating: React.FC = () => {
               </div>
             </IonRadioGroup>
             <IonRadioGroup>
-              <IonListHeader>
-                Ambiente Incluisvo
-            </IonListHeader>
+              <IonListHeader>Ambiente Incluisvo</IonListHeader>
 
               <div className="options">
                 <IonItem>
@@ -186,9 +165,7 @@ const Rating: React.FC = () => {
               </div>
             </IonRadioGroup>
             <IonRadioGroup>
-              <IonListHeader>
-                Representatividade
-            </IonListHeader>
+              <IonListHeader>Representatividade</IonListHeader>
 
               <div className="options">
                 <IonItem>
@@ -213,10 +190,10 @@ const Rating: React.FC = () => {
               </div>
             </IonRadioGroup>
             <IonItem>
-                <IonLabel>Você indicaria esta empresa?</IonLabel>
-                <IonButton size="small">Sim</IonButton>
-                <IonButton size="small">Não</IonButton>
-              </IonItem>
+              <IonLabel>Você indicaria esta empresa?</IonLabel>
+              <IonButton size="small">Sim</IonButton>
+              <IonButton size="small">Não</IonButton>
+            </IonItem>
             <IonItem>
               <IonTextarea placeholder="Deixe seu comentário aqui"></IonTextarea>
             </IonItem>
