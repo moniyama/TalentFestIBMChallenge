@@ -37,8 +37,8 @@ const QuemSomos: React.FC = () => {
         </IonCard>
         <IonCard>
           <IonCardHeader>
-            <img src="../assets/Annanda.jpeg" alt="" />
-            <IonCardTitle>Annanda Rios</IonCardTitle>
+            <img src="../assets/Anannda.jpeg" alt="" />
+            <IonCardTitle>Anannda Rios</IonCardTitle>
           </IonCardHeader>
         </IonCard>
         <IonCard>
