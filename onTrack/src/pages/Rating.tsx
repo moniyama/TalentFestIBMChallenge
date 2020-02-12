@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, IonIcon, IonRadioGroup, IonRadio, IonInput, IonListHeader, IonTextarea, IonFabButton, IonButton } from '@ionic/react';
 import './Rating.css';
 import { happy, sad, closeCircle } from 'ionicons/icons';
-import firestore from '../database/firebaseConfig'
+import firebase from '../database/firebaseConfig';
 
 
 // const createEvaluation = () => {
@@ -25,9 +25,41 @@ import firestore from '../database/firebaseConfig'
 //       window.location = '#home';
 //     });
 // }
-
+  
 
 const Rating: React.FC = () => {
+
+  const [evaluation, setEvaluation] = useState([]);
+  const [company, setCompany] = useState('');
+  const [sector, setSector] = useState('');
+
+  const sendRequest = () => {
+
+    if (evaluation.length && sector && company) {
+      firebase.firestore().collection('evaluation').add({
+        evaluation,
+        sector,
+        company,
+        timeSend: new Date().getTime(),
+        status: 'evaluation',
+      })
+        .then(() => {
+        })
+      setEvaluation([])
+      setCompany('')
+      setSector('')
+    }
+    else if (!evaluation.length) {
+      alert('Selecione a avaliação')
+    }
+    else if (!company) {
+      alert('Insira o nome da empresa')
+    }
+    else if (!sector) {
+      alert('Insira o nome do setor')
+    }
+  }
+  
   return (
     <IonPage>
       <IonHeader>
