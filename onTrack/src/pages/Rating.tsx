@@ -83,8 +83,8 @@ const Rating: React.FC = () => {
                 setSector((e.target as any).value)
               }} />
             <IonList>
-              <IonRadioGroup>
-                <IonListHeader>
+              <IonRadioGroup  className="list" >
+                <IonListHeader  className="list" >
                   Plano de Carreira
               </IonListHeader>
 
@@ -130,8 +130,8 @@ const Rating: React.FC = () => {
                 </div>
               </IonRadioGroup>
             </IonList>
-            <IonRadioGroup>
-              <IonListHeader>
+            <IonRadioGroup  className="list" >
+              <IonListHeader  className="list" >
                 Maternidade
               </IonListHeader>
 
@@ -175,8 +175,8 @@ const Rating: React.FC = () => {
                 </IonItem>
               </div>
             </IonRadioGroup>
-            <IonRadioGroup>
-              <IonListHeader>
+            <IonRadioGroup  className="list" >
+              <IonListHeader  className="list" >
                 Flexibilidade
               </IonListHeader>
 
@@ -220,8 +220,8 @@ const Rating: React.FC = () => {
                 </IonItem>
               </div>
             </IonRadioGroup>
-            <IonRadioGroup>
-              <IonListHeader>
+            <IonRadioGroup  className="list" >
+              <IonListHeader  className="list" >
                 Ambiente Inclusivo
               </IonListHeader>
 
@@ -265,8 +265,8 @@ const Rating: React.FC = () => {
                 </IonItem>
               </div>
             </IonRadioGroup>
-            <IonRadioGroup>
-              <IonListHeader>
+            <IonRadioGroup  className="list" >
+              <IonListHeader  className="list" >
                 Representatividade
               </IonListHeader>
 
@@ -310,8 +310,8 @@ const Rating: React.FC = () => {
                 </IonItem>
               </div>
             </IonRadioGroup>
-            <IonItem>
-              <IonLabel>Você indicaria esta empresa?</IonLabel>
+            <IonItem  className="list" >
+              <IonLabel >Você indicaria esta empresa?</IonLabel>
               <IonItem>
                 <IonToggle color="success" onIonChange={() => { setRecomendation(!recomendation) }} />
                 <IonLabel>SIM</IonLabel>
