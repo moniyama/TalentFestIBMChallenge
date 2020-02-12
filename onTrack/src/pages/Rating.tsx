@@ -53,14 +53,14 @@ const Rating: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Woman OnTrack</IonTitle>
-        </IonToolbar>
-        <IonListHeader>
-          <IonLabel>Avalie sua Empresa Aqui</IonLabel>
-        </IonListHeader>
+      <IonHeader className="header">
+        <div className="logo">
+        <img src="/assets/logo.jpeg"/>
+        </div>
       </IonHeader>
+        <IonListHeader>
+          <IonTitle className="title">Avalie sua Empresa Aqui</IonTitle>
+        </IonListHeader>
       <IonContent>
         <div className="marginHome">
           <IonList>
