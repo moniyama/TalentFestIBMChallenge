@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, IonIcon, IonRadioGroup, IonRadio, IonInput, IonListHeader, IonTextarea, IonFabButton, IonButton } from '@ionic/react';
+import { IonContent, IonHeader, IonItem, IonLabel, IonImg, IonList, IonPage, IonTitle, IonToolbar, IonIcon, IonRadioGroup, IonRadio, IonInput, IonListHeader, IonTextarea, IonFabButton, IonButton } from '@ionic/react';
 import './Rating.css';
 import { happy, sad, closeCircle } from 'ionicons/icons';
 import firebase from '../database/firebaseConfig';
@@ -63,13 +63,13 @@ const Rating: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Woman OnTrack</IonTitle>
-        </IonToolbar>
-        <IonListHeader>
-          <IonLabel>Avalie sua Empresa Aqui</IonLabel>
-        </IonListHeader>
+        <div className="logo">
+        <img src="/assets/LogoWoman.png"/>
+        </div>
       </IonHeader>
+        <IonListHeader>
+          <IonTitle className="title">Avalie sua Empresa Aqui</IonTitle>
+        </IonListHeader>
       <IonContent>
         <div className="marginHome">
           <IonList>
