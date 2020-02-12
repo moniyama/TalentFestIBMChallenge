@@ -1,0 +1,10 @@
+:root {
+  --ion-background-color: #f4fcf8;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
