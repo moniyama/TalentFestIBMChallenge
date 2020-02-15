@@ -1,5 +1,5 @@
 :root{
-    --ion-background-color: #f4fcf8;
+    --ion-background-color: #fffcff;
 }
 
 .marginHome{
@@ -17,6 +17,10 @@
     text-align: center;
 }
 
+.header{
+    background-color:#AE2670;
+}
+
 .title{
     margin-top: 20px;
     font-size: 25px;
@@ -24,9 +28,6 @@
     text-align: center;
 }
 
-.header{
-    background-color:#AE2670;
-}
 
 .list{
     font-size: 20px;

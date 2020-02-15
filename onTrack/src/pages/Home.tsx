@@ -4,7 +4,6 @@ import {
   IonHeader,
   IonPage,
   IonTitle,
-  IonToolbar,
   IonListHeader
 } from "@ionic/react";
 import firebase from "../database/firebaseConfig";
@@ -27,10 +26,14 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader className="header">
         <div className="logo">
-          <img src="/assets/logo.jpeg" />
+          <img src="/assets/logo.jpeg"  alt=""/>
         </div>
       </IonHeader>
-      <IonListHeader className="title">Avaliações</IonListHeader>
+
+      <IonListHeader>
+        <IonTitle className="title">Avaliações</IonTitle>
+      </IonListHeader>
+      
       <IonContent>
         {evaluations.map((evaluation: any, index: any) => (
           <Card
