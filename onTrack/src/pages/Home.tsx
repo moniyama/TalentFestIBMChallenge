@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonListHeader
-} from "@ionic/react";
+import { IonContent, IonPage } from "@ionic/react";
 import firebase from "../database/firebaseConfig";
 import Card from "../components/card";
+import Header from "../components/Header";
 
 const Home: React.FC = () => {
   const [evaluations, setEvaluations] = useState([] as any);
@@ -24,16 +19,7 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader className="header">
-        <div className="logo">
-          <img src="/assets/logo.jpeg"  alt=""/>
-        </div>
-      </IonHeader>
-
-      <IonListHeader>
-        <IonTitle className="title">Avaliações</IonTitle>
-      </IonListHeader>
-      
+      <Header title={"Avaliações"} />
       <IonContent>
         {evaluations.map((evaluation: any, index: any) => (
           <Card

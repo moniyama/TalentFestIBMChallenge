@@ -1,39 +1,28 @@
 import React from "react";
 import {
   IonContent,
-  IonHeader,
   IonPage,
-  IonTitle,
-  IonListHeader,
   IonCard,
   IonCardHeader,
   IonCardTitle
 } from "@ionic/react";
 import "./QuemSomos.css";
+import Header from "../components/Header";
 
 const QuemSomos: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader className="header">
-        <div className="logo">
-          <img src="/assets/logo.jpeg" alt=""/>
-        </div>
-      </IonHeader>
-
-      <IonListHeader>
-        <IonTitle className="title"> Quem Somos </IonTitle>
-      </IonListHeader>
-
+      <Header title={"Quem Somos"} />
       <p className="about">
-      Empresa especializada em pesquisa de clima organizacional, direcionado
-      para usuárias profissionais afim de coletar informações de interesses
-      relacionados a benefícios para mulheres, gerando assim engajamento para
-      ingressar e permanecer na empresa. Além disso, trabalhamos em parceria com
-      as empresas, com foco em fornecer dados detalhados e fieis, fornecidos
-      pelos próprios colaboradores de forma anônima, com pontos específicos de
-      melhoria e comparativo desses pontos com outras empresas.
+        Empresa especializada em pesquisa de clima organizacional, direcionado
+        para usuárias profissionais afim de coletar informações de interesses
+        relacionados a benefícios para mulheres, gerando assim engajamento para
+        ingressar e permanecer na empresa. Além disso, trabalhamos em parceria
+        com as empresas, com foco em fornecer dados detalhados e fieis,
+        fornecidos pelos próprios colaboradores de forma anônima, com pontos
+        específicos de melhoria e comparativo desses pontos com outras empresas.
       </p>
-      
+
       <IonContent>
         <IonCard className="photos">
           <IonCardHeader>
@@ -76,7 +65,6 @@ const QuemSomos: React.FC = () => {
             <IonCardTitle>Vanessa Nery</IonCardTitle>
           </IonCardHeader>
         </IonCard>
-        
       </IonContent>
     </IonPage>
   );

@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import {
   IonContent,
-  IonHeader,
   IonItem,
   IonLabel,
   IonList,
   IonPage,
-  IonTitle,
   IonIcon,
   IonRadioGroup,
   IonRadio,
@@ -19,6 +17,7 @@ import {
 import "./Rating.css";
 import { happy, sad, closeCircle } from "ionicons/icons";
 import firebase from "../database/firebaseConfig";
+import Header from "../components/Header";
 
 const Rating: React.FC = () => {
   const [company, setCompany] = useState("");
@@ -68,14 +67,7 @@ const Rating: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader className="header">
-        <div className="logo">
-          <img src="/assets/logo.jpeg"  alt=""/>
-        </div>
-      </IonHeader>
-      <IonListHeader>
-        <IonTitle className="title">Avalie sua Empresa Aqui</IonTitle>
-      </IonListHeader>
+      <Header title={"Avalie sua Empresa Aqui"} />
       <IonContent>
         <div className="marginHome">
           <IonList>
@@ -98,10 +90,10 @@ const Rating: React.FC = () => {
               }}
             />
             <IonList>
-              <IonRadioGroup  className="list" >
-                <IonListHeader  className="list" >
+              <IonRadioGroup className="list">
+                <IonListHeader className="list">
                   Plano de Carreira
-              </IonListHeader>
+                </IonListHeader>
 
                 <div className="options">
                   <IonItem>
@@ -152,10 +144,8 @@ const Rating: React.FC = () => {
                 </div>
               </IonRadioGroup>
             </IonList>
-            <IonRadioGroup  className="list" >
-              <IonListHeader  className="list" >
-                Maternidade
-              </IonListHeader>
+            <IonRadioGroup className="list">
+              <IonListHeader className="list">Maternidade</IonListHeader>
 
               <div className="options">
                 <IonItem>
@@ -205,10 +195,8 @@ const Rating: React.FC = () => {
                 </IonItem>
               </div>
             </IonRadioGroup>
-            <IonRadioGroup  className="list" >
-              <IonListHeader  className="list" >
-                Flexibilidade
-              </IonListHeader>
+            <IonRadioGroup className="list">
+              <IonListHeader className="list">Flexibilidade</IonListHeader>
 
               <div className="options">
                 <IonItem>
@@ -258,10 +246,8 @@ const Rating: React.FC = () => {
                 </IonItem>
               </div>
             </IonRadioGroup>
-            <IonRadioGroup  className="list" >
-              <IonListHeader  className="list" >
-                Ambiente Inclusivo
-              </IonListHeader>
+            <IonRadioGroup className="list">
+              <IonListHeader className="list">Ambiente Inclusivo</IonListHeader>
 
               <div className="options">
                 <IonItem>
@@ -311,10 +297,8 @@ const Rating: React.FC = () => {
                 </IonItem>
               </div>
             </IonRadioGroup>
-            <IonRadioGroup  className="list" >
-              <IonListHeader  className="list" >
-                Representatividade
-              </IonListHeader>
+            <IonRadioGroup className="list">
+              <IonListHeader className="list">Representatividade</IonListHeader>
 
               <div className="options">
                 <IonItem>
@@ -364,9 +348,9 @@ const Rating: React.FC = () => {
                 </IonItem>
               </div>
             </IonRadioGroup>
-            <IonItem  className="list" >
-              <IonLabel >Você indicaria esta empresa?</IonLabel>
-              <IonItem>
+            <IonLabel className="list">
+              <IonLabel>Você indicaria esta empresa?</IonLabel>
+              <IonLabel>
                 <IonToggle
                   color="success"
                   onIonChange={() => {
@@ -374,8 +358,8 @@ const Rating: React.FC = () => {
                   }}
                 />
                 <IonLabel>SIM</IonLabel>
-              </IonItem>
-            </IonItem>
+              </IonLabel>
+            </IonLabel>
             <IonItem>
               <IonTextarea
                 placeholder="Deixe seu comentário aqui"
