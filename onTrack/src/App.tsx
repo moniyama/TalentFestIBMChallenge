@@ -10,7 +10,7 @@ import {
   IonTabs
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { apps, flash, send } from 'ionicons/icons';
+import { create, flash, home } from 'ionicons/icons';
 import QuemSomos from './pages/QuemSomos';
 import Rating from './pages/Rating';
 import Home from './pages/Home';
@@ -37,17 +37,17 @@ const App: React.FC = () => (
           <Route path="/" render={() => <Redirect to="/home" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="QuemSomos" href="/QuemSomos">
-            <IonIcon icon={flash} />
+          <IonTabButton tab="Home" href="/Home">
+            <IonIcon icon={home} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
           <IonTabButton tab="Rating" href="/Rating">
-            <IonIcon icon={apps} />
-            <IonLabel>Avaliação</IonLabel>
+            <IonIcon icon={create} />
+            <IonLabel>Avalie Aqui</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="Home" href="/Home">
-            <IonIcon icon={send} />
-            <IonLabel>Resultados</IonLabel>
+          <IonTabButton tab="QuemSomos" href="/QuemSomos">
+            <IonIcon icon={flash} />
+            <IonLabel>Sobre nós</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

@@ -18,6 +18,7 @@ export default function RadioGroup(props) {
           <IonIcon icon={closeCircle} />
           <IonRadio
             value="0"
+            color="danger"
             onIonSelect={e => {
               props.setstate(e.target.value);
             }}
