@@ -1,5 +1,4 @@
 .title {
-  margin-top: 20px;
   font-size: 25px;
   font-weight: bold;
   text-align: center;
@@ -12,8 +11,7 @@
   margin: 0;
 }
 
-.photos {
-  width: 50%;
-  text-align: center;
-  margin-left: 25%;
+.card {
+  width: fit-content;
+  display: flex;
 }

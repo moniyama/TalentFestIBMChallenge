@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { IonContent, IonPage } from "@ionic/react";
 import firebase from "../database/firebaseConfig";
-import Card from "../components/card";
+import RecommendationCard from "../components/RecommendationCard";
 import Header from "../components/Header";
 
 const Home: React.FC = () => {
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
       <Header title={"Avaliações"} />
       <IonContent>
         {evaluations.map((evaluation: any, index: any) => (
-          <Card
+          <RecommendationCard
             key={index}
             name={evaluation.company}
             recomendation={evaluation.recomendation}

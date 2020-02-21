@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   IonContent,
   IonItem,
@@ -62,8 +62,8 @@ const Rating: React.FC = () => {
 
   return (
     <IonPage>
-      <Header title={"Avalie sua Empresa Aqui"} />
       <IonContent>
+      <Header title={"Avalie sua Empresa Aqui"} />
         <div className="marginHome">
           <IonList>
             <IonInput

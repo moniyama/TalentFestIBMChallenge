@@ -8,7 +8,7 @@ import {
 } from "@ionic/react";
 import { happy, sad } from "ionicons/icons";
 
-export default function Card(props) {
+export default function RecommendationCard(props) {
   return (
     <IonCard>
       <IonCardHeader>
