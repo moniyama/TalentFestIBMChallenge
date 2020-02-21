@@ -1,8 +1,8 @@
 import React from "react";
 import { IonContent, IonPage } from "@ionic/react";
 import "./QuemSomos.css";
-import Header from "../components/Header";
-import PhotoCard from "../components/CardPhoto";
+import { Header } from "../components/Header";
+import { CardPhoto } from "../components/CardPhotos";
 
 const QuemSomos: React.FC = () => {
   return (
@@ -19,32 +19,32 @@ const QuemSomos: React.FC = () => {
           pontos específicos de melhoria e comparativo desses pontos com outras
           empresas.
         </section>
-        <PhotoCard
-          name={"Aline"}
+        <CardPhoto
+          name="Aline"
           surname={"Mussi"}
           githubLink={"https://github.com/AlineMussi"}
         />
-        <PhotoCard
+        <CardPhoto
           name={"Anannda"}
           surname={"Rios"}
           githubLink={"https://github.com/ananndarios"}
         />
-        <PhotoCard
+        <CardPhoto
           name={"Monica"}
           surname={"Yamazaki"}
           githubLink={"https://github.com/moniyama"}
         />
-        <PhotoCard
+        <CardPhoto
           name={"Natalia"}
           surname={"Thomé"}
           githubLink={"https://github.com/NatThome"}
         />
-        <PhotoCard
+        <CardPhoto
           name={"Priscila"}
           surname={"Tiemi"}
           githubLink={"https://github.com/tiemimaeda"}
         />
-        <PhotoCard
+        <CardPhoto
           name={"Vanessa"}
           surname={"Nery"}
           githubLink={"https://github.com/VanesNery"}

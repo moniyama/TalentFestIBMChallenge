@@ -12,8 +12,8 @@ import {
 } from "@ionic/react";
 import "./Rating.css";
 import firebase from "../database/firebaseConfig";
-import Header from "../components/Header";
-import RadioGroup from "../components/RadioGroup";
+import { Header } from "../components/Header";
+import { RadioGroup } from "../components/RadioGroup";
 
 const Rating: React.FC = () => {
   const [company, setCompany] = useState("");
@@ -63,7 +63,7 @@ const Rating: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-      <Header title={"Avalie sua Empresa Aqui"} />
+        <Header title={"Avalie sua Empresa Aqui"} />
         <div className="marginHome">
           <IonList>
             <IonInput

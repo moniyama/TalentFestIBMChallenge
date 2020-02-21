@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { IonContent, IonPage } from "@ionic/react";
 import firebase from "../database/firebaseConfig";
-import RecommendationCard from "../components/RecommendationCard";
-import Header from "../components/Header";
+import { RecommendationCard } from "../components/RecommendationCard";
+import { Header } from "../components/Header";
 
 const Home: React.FC = () => {
   const [evaluations, setEvaluations] = useState([] as any);
