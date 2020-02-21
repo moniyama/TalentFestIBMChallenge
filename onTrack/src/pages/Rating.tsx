@@ -1,24 +1,19 @@
 import React, { useState } from "react";
 import {
   IonContent,
-  IonHeader,
   IonItem,
   IonLabel,
   IonList,
   IonPage,
-  IonTitle,
-  IonIcon,
-  IonRadioGroup,
-  IonRadio,
   IonInput,
-  IonListHeader,
   IonTextarea,
   IonButton,
   IonToggle
 } from "@ionic/react";
 import "./Rating.css";
-import { happy, sad, closeCircle } from "ionicons/icons";
 import firebase from "../database/firebaseConfig";
+import { Header } from "../components/Header";
+import { RadioGroup } from "../components/RadioGroup";
 
 const Rating: React.FC = () => {
   const [company, setCompany] = useState("");
@@ -61,22 +56,14 @@ const Rating: React.FC = () => {
           timeSend: new Date().getTime(),
           status: "evaluation"
         });
-
       cleanState();
     }
   };
 
   return (
     <IonPage>
-      <IonHeader className="header">
-        <div className="logo">
-          <img src="/assets/logo.jpeg"  alt=""/>
-        </div>
-      </IonHeader>
-      <IonListHeader>
-        <IonTitle className="title">Avalie sua Empresa Aqui</IonTitle>
-      </IonListHeader>
       <IonContent>
+        <Header title={"Avalie sua Empresa Aqui"} />
         <div className="marginHome">
           <IonList>
             <IonInput
@@ -91,304 +78,54 @@ const Rating: React.FC = () => {
             <IonInput
               name="sector"
               type="text"
-              placeholder=" Setor"
+              placeholder="Setor"
               data-value={sector}
               onIonChange={e => {
                 setSector((e.target as any).value);
               }}
             />
             <IonList>
-              <IonRadioGroup  className="list" >
-                <IonListHeader  className="list" >
-                  Plano de Carreira
-              </IonListHeader>
+              <RadioGroup
+                title={"Plano de Carreira"}
+                setstate={setCareerPlan}
+              />
+              <RadioGroup title={"Maternidade"} setstate={setMaternity} />
+              <RadioGroup
+                title={"Ambiente Inclusivo"}
+                setstate={setInclusive}
+              />
+              <RadioGroup title={"Flexibilidade"} setstate={setFlexibility} />
+              <RadioGroup
+                title={"Representatividade"}
+                setstate={setRepresent}
+              />
 
-                <div className="options">
-                  <IonItem>
-                    <IonIcon icon={sad} />
-                    <IonRadio
-                      value="1"
-                      color="danger"
-                      onIonSelect={e => {
-                        console.log((e.target as any).value);
-                        setCareerPlan((e.target as any).value);
-                      }}
-                    />
-                  </IonItem>
-
-                  <IonItem>
-                    <IonLabel>Neutro</IonLabel>
-                    <IonRadio
-                      value="2"
-                      onIonSelect={e => {
-                        console.log((e.target as any).value);
-                        setCareerPlan((e.target as any).value);
-                      }}
-                    />
-                  </IonItem>
-
-                  <IonItem>
-                    <IonIcon icon={happy} />
-                    <IonRadio
-                      value="3"
-                      color="success"
-                      onIonSelect={e => {
-                        console.log((e.target as any).value);
-                        setCareerPlan((e.target as any).value);
-                      }}
-                    />
-                  </IonItem>
-
-                  <IonItem>
-                    <IonIcon icon={closeCircle} />
-                    <IonRadio
-                      value="0"
-                      onIonSelect={e => {
-                        console.log((e.target as any).value);
-                        setCareerPlan((e.target as any).value);
-                      }}
-                    />
-                  </IonItem>
-                </div>
-              </IonRadioGroup>
-            </IonList>
-            <IonRadioGroup  className="list" >
-              <IonListHeader  className="list" >
-                Maternidade
-              </IonListHeader>
-
-              <div className="options">
-                <IonItem>
-                  <IonIcon icon={sad} />
-                  <IonRadio
-                    value="1"
-                    color="danger"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setMaternity((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-
-                <IonItem>
-                  <IonLabel>Neutro</IonLabel>
-                  <IonRadio
-                    value="2"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setMaternity((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-
-                <IonItem>
-                  <IonIcon icon={happy} />
-                  <IonRadio
-                    value="3"
+              <IonLabel className="list">
+                <IonLabel>Você indicaria esta empresa?</IonLabel>
+                <IonLabel>
+                  <IonToggle
                     color="success"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setMaternity((e.target as any).value);
+                    onIonChange={() => {
+                      setRecomendation(!recomendation);
                     }}
                   />
-                </IonItem>
-
-                <IonItem>
-                  <IonIcon icon={closeCircle} />
-                  <IonRadio
-                    value="0"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setMaternity((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-              </div>
-            </IonRadioGroup>
-            <IonRadioGroup  className="list" >
-              <IonListHeader  className="list" >
-                Flexibilidade
-              </IonListHeader>
-
-              <div className="options">
-                <IonItem>
-                  <IonIcon icon={sad} />
-                  <IonRadio
-                    value="1"
-                    color="danger"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setFlexibility((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-
-                <IonItem>
-                  <IonLabel>Neutro</IonLabel>
-                  <IonRadio
-                    value="2"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setFlexibility((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-
-                <IonItem>
-                  <IonIcon icon={happy} />
-                  <IonRadio
-                    value="3"
-                    color="success"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setFlexibility((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-
-                <IonItem>
-                  <IonIcon icon={closeCircle} />
-                  <IonRadio
-                    value="0"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setFlexibility((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-              </div>
-            </IonRadioGroup>
-            <IonRadioGroup  className="list" >
-              <IonListHeader  className="list" >
-                Ambiente Inclusivo
-              </IonListHeader>
-
-              <div className="options">
-                <IonItem>
-                  <IonIcon icon={sad} />
-                  <IonRadio
-                    value="1"
-                    color="danger"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setInclusive((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-
-                <IonItem>
-                  <IonLabel>Neutro</IonLabel>
-                  <IonRadio
-                    value="2"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setInclusive((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-
-                <IonItem>
-                  <IonIcon icon={happy} />
-                  <IonRadio
-                    value="3"
-                    color="success"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setInclusive((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-
-                <IonItem>
-                  <IonIcon icon={closeCircle} />
-                  <IonRadio
-                    value="0"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setInclusive((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-              </div>
-            </IonRadioGroup>
-            <IonRadioGroup  className="list" >
-              <IonListHeader  className="list" >
-                Representatividade
-              </IonListHeader>
-
-              <div className="options">
-                <IonItem>
-                  <IonIcon icon={sad} />
-                  <IonRadio
-                    value="1"
-                    color="danger"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setRepresent((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-
-                <IonItem>
-                  <IonLabel>Neutro</IonLabel>
-                  <IonRadio
-                    value="2"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setRepresent((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-
-                <IonItem>
-                  <IonIcon icon={happy} />
-                  <IonRadio
-                    value="3"
-                    color="success"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setRepresent((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-
-                <IonItem>
-                  <IonIcon icon={closeCircle} />
-                  <IonRadio
-                    value="0"
-                    onIonSelect={e => {
-                      console.log((e.target as any).value);
-                      setRepresent((e.target as any).value);
-                    }}
-                  />
-                </IonItem>
-              </div>
-            </IonRadioGroup>
-            <IonItem  className="list" >
-              <IonLabel >Você indicaria esta empresa?</IonLabel>
+                  <IonLabel>SIM</IonLabel>
+                </IonLabel>
+              </IonLabel>
               <IonItem>
-                <IonToggle
-                  color="success"
-                  onIonChange={() => {
-                    setRecomendation(!recomendation);
+                <IonTextarea
+                  placeholder="Deixe seu comentário aqui"
+                  name="coment"
+                  data-value={coment}
+                  onIonChange={e => {
+                    setComent((e.target as any).value);
                   }}
                 />
-                <IonLabel>SIM</IonLabel>
               </IonItem>
-            </IonItem>
-            <IonItem>
-              <IonTextarea
-                placeholder="Deixe seu comentário aqui"
-                name="coment"
-                data-value={coment}
-                onIonChange={e => {
-                  setComent((e.target as any).value);
-                }}
-              />
-            </IonItem>
-            <IonButton expand="block" onClick={sendRequest} type={"submit"}>
-              Enviar Avaliação
-            </IonButton>
+              <IonButton expand="block" onClick={sendRequest} type={"submit"}>
+                Enviar Avaliação
+              </IonButton>
+            </IonList>
           </IonList>
         </div>
       </IonContent>

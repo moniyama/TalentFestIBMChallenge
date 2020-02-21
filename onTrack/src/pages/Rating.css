@@ -1,34 +1,32 @@
-:root{
-    --ion-background-color: #fffcff;
+:root {
+  --ion-background-color: #fffcff;
 }
 
-.marginHome{
-    margin: 20px;
-    font-size: 20px;
+.marginHome {
+  margin: 20px;
+  font-size: 20px;
 }
 
-.options{
-    display: flex;
-    justify-content: space-evenly;
-    align-content: center;
+.options {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
 }
 
-.logo{
-    text-align: center;
+.logo {
+  text-align: center;
 }
 
-.header{
-    background-color:#AE2670;
+.header {
+  background-color: #ae2670;
 }
 
-.title{
-    margin-top: 20px;
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
+.title {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
 }
 
-
-.list{
-    font-size: 20px;
+.list {
+  font-size: 20px;
 }
